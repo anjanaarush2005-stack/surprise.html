@@ -23,7 +23,6 @@
         }
         h1 { color: #d81b60; font-size: 2.5em; }
         
-        /* Surprise Button Style */
         #surpriseBtn {
             background-color: #d81b60;
             color: white;
@@ -33,29 +32,24 @@
             border-radius: 50px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
-            transition: transform 0.2s, background-color 0.3s;
+            transition: transform 0.2s;
             margin: 20px 0;
         }
-        #surpriseBtn:hover {
-            background-color: #ad1457;
-            transform: scale(1.05);
-        }
 
-        /* Video Section - Initially Hidden */
+        /* Shorter/Smaller Video Styling */
         #videoContainer {
             display: none;
             margin: 30px 0;
         }
         video {
-    width: 100%;             /* This allows it to be responsive on mobile */
-    max-width: 400px;        /* This prevents it from looking "very big" on desktop */
-    display: block;          /* Needed for margin: auto to work */
-    margin: 0 auto;          /* Centers the video horizontally */
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
+            width: 100%;
+            max-width: 400px; /* Makes it shorter/smaller */
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
 
-        /* Note Section */
         .note-section {
             background: #fff9c4;
             padding: 20px;
@@ -67,7 +61,6 @@
             text-align: left;
         }
 
-        /* Photo Collage */
         .collage {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -76,12 +69,11 @@
         }
         .collage img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        .collage img:hover { transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -111,25 +103,20 @@
     </div>
 
     <div class="collage">
-        <img src="photo1.jpeg" alt="Memory 1">
-        <img src="photo2.jpeg" alt="Memory 2">
-        <img src="photo3.jpeg" alt="Memory 3">
-        <img src="photo4.jpeg" alt="Memory 4">
-        <img src="photo5.jpeg" alt="Memory 5">
-        <img src="photo6.jpeg" alt="Memory 6">
+        <img src="Photo1.jpeg" alt="Memory 1">
+        <img src="Photo2.jpeg" alt="Memory 2">
+        <img src="Photo3.jpeg" alt="Memory 3">
+        <img src="Photo4.jpeg" alt="Memory 4">
+        <img src="Photo5.jpeg" alt="Memory 5">
+        <img src="Photo6.jpeg" alt="Memory 6">
     </div>
 </div>
 
 <script>
     function revealSurprise() {
-        // Hide the button
         document.getElementById('surpriseBtn').style.display = 'none';
-        
-        // Show the video container
         const videoContainer = document.getElementById('videoContainer');
         videoContainer.style.display = 'block';
-        
-        // Play the video automatically
         const video = document.getElementById('birthdayVideo');
         video.play();
     }
